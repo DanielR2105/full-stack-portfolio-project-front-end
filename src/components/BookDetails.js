@@ -27,7 +27,6 @@ export default function BookDetails() {
     axios
       .get(`${API}/books/${id}`)
       .then((response) => {
-        console.log(response.data);
         setBook(response.data);
       })
       .catch((c) => {
@@ -40,6 +39,7 @@ export default function BookDetails() {
       <h3>{book.title}</h3>
       <img src={book.image} alt="" />
       <h4>{book.author}</h4>
+      <h4>Average Rating: {book.average_rating}/5</h4>
       <Link to={`/books`}>
         <button>Back</button>
       </Link>
