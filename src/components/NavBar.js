@@ -19,20 +19,28 @@ export default function NavBar({ loggedin }) {
 
   return (
     <nav>
-      <h1>
-        <Link to="/">Home</Link>
-        <Link to="/books">Books</Link>
-      </h1>
-      <button>
-        <Link to="/books/new">Add a new book</Link>
-      </button>
-      <button onClick={() => handleSignout()} />
-      <button>
-        <Link to="/newuser"> Sign Up </Link>
-      </button>
-      <button>
-        <Link to="/returninguser"> Log In </Link>
-      </button>
+      <h1>Name goes here </h1>
+      {loggedin ? (
+        <div>
+          <h1>
+            <Link to="/">Home</Link>
+            <Link to="/books">Books</Link>
+          </h1>
+          <button>
+            <Link to="/books/new">Add a new book</Link>
+          </button>
+          <button onClick={() => handleSignout()}>Log Out</button>
+        </div>
+      ) : (
+        <div>
+          <button>
+            <Link to="/newuser">New user? Sign up! </Link>
+          </button>
+          <button>
+            <Link to="/returninguser">Returning user? Log in! </Link>
+          </button>
+        </div>
+      )}
     </nav>
   );
 }

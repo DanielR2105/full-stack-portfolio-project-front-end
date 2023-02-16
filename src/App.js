@@ -14,6 +14,9 @@ import NewUser from "./pages/NewUser";
 import ReturningUser from "./pages/ReturningUser";
 import ShowBook from "./pages/ShowBook";
 import UserSetup from "./pages/UserSetup";
+import NewBookclub from "./pages/NewBookclub";
+import Editbookclub from "./pages/Editbookclub";
+import ShowBookclubs from "./pages/ShowBookclubs";
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -70,6 +73,7 @@ function App() {
               <UserSetup setLoggedinUser={setUser} firebaseId={firebaseId} />
             }
           />
+          <Route path="/bookclubs" element={<ShowBookclubs />} />
         </Routes>
       </Router>
     </div>
