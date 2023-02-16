@@ -24,7 +24,6 @@ export default function SignUp() {
       .then(async (userCredential) => {
         const newUser = userCredential.user;
         if (newUser) {
-          alert("You created an account!");
           navigate("/usersetup");
         }
       })
@@ -49,7 +48,7 @@ export default function SignUp() {
 
   return (
     <div>
-      <h1>Sign in here</h1>
+      <h1>Sign up here</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="Email">Email</label>
         <input type="text" id="email" onChange={handleInfoChange} />
@@ -57,7 +56,7 @@ export default function SignUp() {
         <label htmlFor="Password">Password</label>
         <input type="text" id="password" onChange={handleInfoChange} />
         <br />
-        <input type="submit" />
+        <input value="Next Page" type="submit" />
       </form>
     </div>
   );

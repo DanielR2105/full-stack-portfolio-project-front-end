@@ -14,7 +14,6 @@ import NewUser from "./pages/NewUser";
 import ReturningUser from "./pages/ReturningUser";
 import ShowBook from "./pages/ShowBook";
 import UserSetup from "./pages/UserSetup";
-import Signout from "./pages/Signout";
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -50,6 +49,7 @@ function App() {
     } else {
       setUser({});
     }
+    console.log(user);
   }, [loggedin, firebaseId]);
 
   return (
@@ -70,7 +70,6 @@ function App() {
               <UserSetup setLoggedinUser={setUser} firebaseId={firebaseId} />
             }
           />
-          <Route path="signout" element={<Signout />} />
         </Routes>
       </Router>
     </div>

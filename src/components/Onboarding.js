@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import app from "../firebase";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Onboarding({ setLoggedinUser, firebaseId }) {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     favorite_book: "",
@@ -22,6 +22,8 @@ export default function Onboarding({ setLoggedinUser, firebaseId }) {
     axios.post(`${API}/users`, user).then((response) => {
       setLoggedinUser(response.data);
     });
+    navigate("/");
+    alert("You created an account!");
   };
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function Onboarding({ setLoggedinUser, firebaseId }) {
         <label htmlFor="Favorite Genre">Favorite Genre</label>
         <input type="text" id="favorite_genre" onChange={handleTextChange} />
         <br />
-        <input type="submit" />
+        <input value="Create Account" type="submit" />
       </form>
     </div>
   );
