@@ -1,38 +1,169 @@
-.App {
+html {
+  background: url(https://99designs-blog.imgix.net/blog/wp-content/uploads/2015/09/attachment_85088311-e1532727202619.jpg?auto=format&q=60&w=2000&h=2000&fit=crop&crop=faces) no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1, h2, h3, h4 {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  background-color: #5c5c5c;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 50px;
+  border-radius: 0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 30px solid #5c5c5c;
+  z-index: -1;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 30px solid #5c5c5c;
+  z-index: -1;
+  border-radius: 0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+button:hover::before {
+  animation: flag-left 0.2s ease-in-out;
+}
+
+button:hover::after {
+  animation: flag-right 0.2s ease-in-out;
+}
+
+@keyframes flag-left {
+  0% {
+    left: -30px;
+    transform: skewX(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    left: 0;
+    transform: skewX(-20deg);
   }
+}
+
+@keyframes flag-right {
+  0% {
+    right: -30px;
+    transform: skewX(0deg);
+  }
+  100% {
+    right: 0;
+    transform: skewX(20deg);
+  }
+}
+
+h1 {
+  display: inline;
+  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.form-wrapper {
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  display: block;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+}
+
+label {
+  width: 5%;
+  font-weight: bold;
+}
+
+input {
+  margin: 4%;
+  display: inline-block;
+}
+
+.title {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+
+.nav_header {
+  text-align: center;
+}
+
+.home h2 {
+  font-size: xx-large;
+}
+
+nav {
+  margin-bottom: 2%;
+}
+
+.bookclub {
+  background-color: rgba(53, 115, 102, 0.9);
+  width: 30%;
+  height: auto;
+  padding: 3%;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  
 }

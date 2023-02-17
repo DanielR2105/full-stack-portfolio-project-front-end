@@ -1,5 +1,10 @@
-import React from "react";
+import Bookclubs from "../components/Bookclubs";
 
 export default function ShowBookclubs() {
-  return <div>ShowBookclubs</div>;
+  return (
+    <div>
+      <h2>Here are all bookclubs</h2>
+      <Bookclubs />
+    </div>
+  );
 }

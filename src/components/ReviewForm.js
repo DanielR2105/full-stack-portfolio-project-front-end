@@ -50,6 +50,7 @@ function ReviewForm(props) {
           placeholder="Your name"
           required
         />
+        <br></br>
         <label htmlFor="title">Title:</label>
         <input
           id="title"
@@ -58,6 +59,7 @@ function ReviewForm(props) {
           value={review.title}
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="rating">Rating:</label>
         <input
           id="rating"
@@ -69,6 +71,7 @@ function ReviewForm(props) {
           value={review.rating}
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="content">Review:</label>
         <textarea
           id="content"
@@ -78,7 +81,6 @@ function ReviewForm(props) {
           placeholder="What do you think..."
           onChange={handleTextChange}
         />
-
         <br />
 
         <input type="submit" />

@@ -40,7 +40,7 @@ export default function BookDetails() {
       <img src={book.image} alt="" />
       <h4>{book.author}</h4>
       <h4>Average Rating: {book.average_rating}/5</h4>
-      <Link to={`/books`}>
+      <Link to={`/bookclubs/${id}`}>
         <button>Back</button>
       </Link>
       <button onClick={deleteBook}>Delete</button>

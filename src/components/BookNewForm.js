@@ -34,7 +34,7 @@ export default function BookNewForm() {
       .post(`${API}/books`, newBook)
       .then(
         () => {
-          navigate(`/books`);
+          navigate(`/bookclubs/3`);
         },
         (error) => console.error(error)
       )

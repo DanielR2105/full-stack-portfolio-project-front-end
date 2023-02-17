@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar({ loggedin }) {
+  const navigate = useNavigate();
   const auth = getAuth(app);
   const handleSignout = () => {
     if (window.confirm("Confirm logout?")) {
@@ -10,6 +12,7 @@ export default function NavBar({ loggedin }) {
         .then(() => {
           // Sign-out successful.
           alert("Signout successful!");
+          navigate("/");
         })
         .catch((error) => {
           // An error happened.
@@ -19,26 +22,30 @@ export default function NavBar({ loggedin }) {
 
   return (
     <nav>
-      <h1>Name goes here </h1>
+      <h1 className="title">Silk Reads v2 </h1>
       {loggedin ? (
         <div>
-          <h1>
-            <Link to="/">Home</Link>
-            <Link to="/books">Books</Link>
-          </h1>
-          <button>
-            <Link to="/books/new">Add a new book</Link>
-          </button>
-          <button onClick={() => handleSignout()}>Log Out</button>
+          <div className="nav_header">
+            <h1>
+              <Link to="/">Home</Link>
+            </h1>
+            <h1>
+              <Link to="/bookclubs">Bookclubs</Link>
+            </h1>
+            <h1>
+              <Link to="/bookclubs/new">Start a new bookclub</Link>
+            </h1>
+            <h1 onClick={() => handleSignout()}>Log Out</h1>
+          </div>
         </div>
       ) : (
         <div>
-          <button>
+          <h1>
             <Link to="/newuser">New user? Sign up! </Link>
-          </button>
-          <button>
+          </h1>
+          <h1>
             <Link to="/returninguser">Returning user? Log in! </Link>
-          </button>
+          </h1>
         </div>
       )}
     </nav>

@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Home() {
-  return <div>Welcome to cool name goes here!</div>;
+  return (
+    <div className="home">
+      <h2>Welcome to Silk Reads v2!</h2>
+    </div>
+  );
 }
