@@ -16,7 +16,7 @@ import ShowBook from "./pages/ShowBook";
 import UserSetup from "./pages/UserSetup";
 import NewBookclub from "./pages/NewBookclub";
 import Editbookclub from "./pages/Editbookclub";
-import ShowBookclub from "./pages/ShowBookclub";
+import OneBookclub from "./pages/OneBookclub";
 import ShowBookclubs from "./pages/ShowBookclubs";
 
 // COMPONENTS
@@ -74,7 +74,7 @@ function App() {
           />
           <Route path="/bookclubs" element={<ShowBookclubs />} />
           <Route path="/bookclubs/new" element={<NewBookclub />} />
-          <Route path="/bookclubs/:id" element={<ShowBookclub />} />
+          <Route path="/bookclubs/:id" element={<OneBookclub />} />
           <Route path="/bookclubs/:id/edit" element={<Editbookclub />} />
         </Routes>
       </Router>
